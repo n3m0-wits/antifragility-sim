@@ -1,0 +1,10 @@
+numpy #Math and arrays
+scipy #Scientific Computing?
+pandas #Dataframes
+polars #Faster lazy dataframes
+mesa #Agent based modelling
+matplotlib # Some graphs
+seaborn # some more graphs
+jupyter # Interactive Shell and Jupyter Notebooks
+
+
