@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="README_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="antifragility-sim" class="level2">
+<h2 class="anchored" data-anchor-id="antifragility-sim">antifragility-sim</h2>
+</section>
+<section id="systemic-fragility-and-moral-hazard-an-agent-based-simulation-of-the-greenspan-put" class="level2">
+<h2 class="anchored" data-anchor-id="systemic-fragility-and-moral-hazard-an-agent-based-simulation-of-the-greenspan-put"># Systemic Fragility and Moral Hazard: An Agent-Based Simulation of the ‘Greenspan Put’</h2>
+<p>This project develops an Agent-Based Simulation model (ABM) of the macroscopic effects of central bank volatility supression.</p>
+<p>By simulating a network of utiilty-optimising central banks, the model will attempt to demonstrate how the implicit guarantee of bailouts altered institutional risk profiles.</p>
+<p>We will contrast an interventionist monetary policy with a low-intervention one, and attempt to show that suppressing short-term volatility through business cycle smoothing increases the likelyhood of systemic tail-risk (Black Swan) events. (See: Taleb &amp; Blyth, 2011).</p>
+<hr>
+<section id="the-motivating-essay" class="level3">
+<h3 class="anchored" data-anchor-id="the-motivating-essay">The Motivating Essay:</h3>
+<p><strong>Written in 2023 by Naeem Paruk, in partial fulfillment of the requirements of the course Economics 244: Macroeconomics.</strong></p>
+<hr>
+<p>This essay will focus on the role of monetary policy in economic recessions. We will look at the role of central banks in a country’s economy, and how they engage in volatility suppression to minimise the booms and busts of the economic cycle, focusing on the ‘Greenspan Put’ and ‘The Great Moderation’ two instances of volatility suppression in the leadup to the 2008 financial crisis. We will highlight that the increased autonomy of central banks has allowed them to keep volatility low, but at the expense of the long term stability of the economic system, which appears stable but is susceptible to recession-inducing shocks.</p>
+<p>Historically, the primary mandate of most central banks was to ensure monetary stability by keeping inflation stable (Graeber 2011). (and to manage unemployment for dual-mandate central banks (Federal Reserve Act 1977)). They prevent financial panics by being the lender-of-last-resort to stop banking failures (Cukierman 2013). The Phillips (1958) Curve was taken by economists to imply a stable relationship between unemployment and inflation, which influenced monetary policy (Samuelson &amp; Solow 1960) until ’stagflation’, the period of both high inflation and unemployment in the 1970s (Cukierman 2013). Thereafter, the focus of most central banks shifted to maintaining long term price stability. This is typically accomplished by adjustments to interest rate policies.</p>
+<p>In 2004, Ben Bernanke hailed the ”Great Moderation,” the period of greatly reduced volatility in business cycles from the 1980s to the early 2000s (Bernanke 2004). An increase in central bank independence in the 1980s had allowed for better interest rate control, and was seen as a primary driver of the reduced frequency and severity of recessions (Goodfriend 2007) in that period. The Federal Reserve under then-chair Alan Greenspan, were suppressing volatility in business cycles through aggressive, short-term interest rate interventions (Taleb &amp; Blyth 2011). Greenspan also made multiple implications that the Federal Reserve would act as a backstop against insolvency for commercial banks, which became known as the ’Greenspan Put’ (Taleb &amp; Blyth 2011).</p>
+<p>The Federal Reserve’s interventionist monetary policies, like their responsiveness in adjusting interest rates, produced an extremely fragile ’psuedo-stability’ - they created the appearance of a stable economy that had underlying weaknesses. While it resulted in smoothed business cycles, it gave the false impression of reduced risk. This volatility suppression did not decrease risk, but merely decreased their ability to detect it. Banks were taking on more risk, as their balance sheets were still made up of risky tranched products like CDOs, where the underlying loans were high-risk. An increase in interest rates led to a cascade of defaults that then wiped out the housing market (Lewis 2010).</p>
+<p>Taleb &amp; Blyth (2011) argue that the Greenspan Put allowed banks to take on extreme risks, because they had an implicit guarantee that the Federal reserve would backstop bank failures. They further argue that the central banks created a paradox in the period of the Great Moderation: The Federal Reserve’s and other central bank’s attempts to suppress volatility at all costs resulted in an increase in the probability that a tail risk - a major risk with low probability of occuring, referred to by Taleb (2007) as a ”Black Swan” event - would occur. Thus Taleb &amp; Blyth (2011) argues that a less interventionist central bank would have resulted in a more volatile but less fragile economy, less vulnerable to shocks. Furthermore, Taleb (in Baker (2010)) states that central banks should be held partially responsible for the 2008 financial crisis.</p>
+<p>We thus see that the monetary policy of the Federal Reserve encouraged banks to take increasingly risky bets. White (2013) observes that the fragility was a direct result of years of prececent building up the expectations of a bailout. Furthermore, bailout implications meant that banks had little incentive to manage their risk levels. Eloquently summarised in (Lee et al.&nbsp;2021): ”Heads I win. Tails the taxpayer loses.” The banks were considered ’too big to fail’, and thus were willing to assume higher risks (Taleb &amp; Tapiero 2010), because they could socialise their losses. In a 2014 debate, Taleb (in Cox (2015)) asserted that the Federal Reserve’s ”ultra-loose monetary policy” encouraged excessive risk taking.</p>
+<p>It is clear that the increased autonomy of central banks in the last fifty years has allowed them to reduce volatility, smoothing business cycles through price and inflation targeting. However, this faux-stability comes with severe hidden risks to the financial system, leaving it fragile and highly susceptible to tail ’black swans’: unlikely extreme events. Monetary policy from central banks has also created a banking system which incentivises extreme risk taking, shifting the risk to taxpayers through bailouts. Less interventionist monetary policy would lead to an increase in business cycle volatility but would also improve the health of the economy.</p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">REFERENCES</h3>
+<p>Baker, S. (2010), ‘Taleb says investors should sue nobel panel for losses’, Bloomberg. URL: https://archive.is/20200217100355/https://www.bloomberg.com/news/articles/2010- 10-08/taleb-says-crisis-makes-nobel-panel-liable-for-legitimizing-economists#selection-2193.0-2193.15</p>
+<p>Bernanke, B. (2004), ‘The great moderation’, Speech at the Eastern Economic Association. URL: https://web.archive.org/web/20230413141918/https://www.federalreserve.gov/boarddocs/speeches/2004/20040220/</p>
+<p>Cox, J. (2015), ‘Taleb, summers do battle over financial crisis’, CNBC. URL: https://web.archive.org/web/20221207102532/https://www.cnbc.com/2014/05/15/taleb-summers-do-battle-over-financial-crisis.html</p>
+<p>Cukierman, A. (2013), ‘Monetary policy and institutions before, during, and after the global financial crisis’, Journal of Financial Stability 9(3), 373–384. Central banking 2.0. URL: https://doi.org/10.1016/j.jfs.2013.02.002</p>
+<p>Federal Reserve Act (1977), 12 U.S. Code § 225a. URL: https://web.archive.org/web/20230807012537/https://www.federalreserve.gov/aboutthefed/section2a.htm</p>
+<p>Goodfriend, M. (2007), ‘How the world achieved consensus on monetary policy’, The Journal of Economic Perspectives 21(4), 47–68. URL: http://www.jstor.org/stable/30033751</p>
+<p>Graeber, D. (2011), Debt: The First 5,000 Years, Melville House, Brooklyn, N.Y.</p>
+<p>Lee, T., Lee, J. &amp; Coldiron, K. (2021), ‘The end of carry?’, Wilmott (London, England)2021(111), 44–53. URL: https://doi-org.ez.sun.ac.za/10.1002/wilm.10904</p>
+<p>Lewis, M. (2010), The Big Short: Inside the Doomsday Machine, Simon &amp; Schuster.</p>
+<p>Phillips, A. W. (1958), ‘The relation between unemployment and the rate of change of money wage rates in the united kingdom, 1861–1957’, Economica 25(100), 283–299. URL: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0335.1958.tb00003.x</p>
+<p>Samuelson, P. A. &amp; Solow, R. M. (1960), ‘Analytical aspects of anti-inflation policy’, The American Economic Review 50(2), 177–194. URL: http://www.jstor.org/stable/1815021</p>
+<p>Taleb, N. (2007), The black swan : the impact of the highly improbable, 1st edn, Random House, New York.</p>
+<p>Taleb, N. N. &amp; Blyth, M. (2011), ‘The black swan of cairo: How suppressing volatility makes the world less predictable and more dangerous’, Foreign Affairs 90(3), 33–39. URL: http://www.jstor.org/stable/23039405</p>
+<p>Taleb, N. N. &amp; Tapiero, C. S. (2010), ‘Risk externalities and too big to fail’, Physica A: Statistical Mechanics and its Applications 389(17), 3503–3507. URL: https://doi.org/10.1016/j.physa.2010.03.014</p>
+<p>White, L. (2013), ‘Antifragile banking and monetary systems’, Cato Journal 33, 471–484.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
